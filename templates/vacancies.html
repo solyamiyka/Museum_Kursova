@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/vacancies.css">
+    <title>Museum</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header_container">
+                <div class="header_img">
+                    <img src="../static/images/headerimg.svg"  class="header_real_img" alt="headerImg">
+                </div>
+                <nav class="header_menu">
+                    <ul class="menu_list">
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="/" class="menu_link firstword">головна</a>
+                        </li>
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="/vystavky" class="menu_link">виставки</a>
+                        </li>
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="/plan" class="menu_link">запланувати візит</a>
+                        </li>
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="#contacts" class="menu_link contact_link">зворотній зв'язок</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="lenguage_block">EN</button>
+                <button class="burger" type="button">
+                    <span>
+
+                    </span>
+                </button>
+            </div>
+        </header>
+            <main class="main">
+                <div class="main_container">
+                    <section class="vacanciesText">
+                        <p class="mainTextVac">вакансії</p>
+                        <div class="circleVac"></div>
+                        <p class="textVac textVac1">Ми завжди шукаємо талановитих людей для роботи у нашій галереї. </p>
+                        <p class="textVac textVac2">Якщо ви хочете приєднатися до нашої команди, заповніть наступну форму: </p>
+                        <div class="circleVac circleVac1"></div>
+                        <div class="circleVac circleVac2"></div>
+                        <div class="circleVac circleVac3"></div>
+                    </section>
+                    <section class="vacanciesForm">
+                        <form action="/vacancies" method="POST" class="fform">
+                            <input type="text" name="nameSurname" id="nameSurnameInput" class="inputVac" placeholder="Ім'я та прізвище" required>
+                            <p class="error" id="notValidName"></p>
+                            <input type="text" name="email" id="emailInput" class="inputVac" placeholder="Електронна пошта" required>
+                            <p class="error" id="notValidEmail"></p>
+                            <button type="submit" id="buttSend" class="buttonSend">надіслати</button required>
+                            <p class="underbuttontext"></p>
+                        </form>
+                    </section>
+                </div>
+                <section id="contacts">
+                    {% include 'contacts_block.html' %}
+                </section>
+            </main>
+        <!-- footer -->
+        {% include 'footer.html' %} 
+    </div>
+
+    <script src="../static/script/vacanciesValidation.js"></script>
+    <script src="../static/script/main.js"></script>
+</body>
+</html>

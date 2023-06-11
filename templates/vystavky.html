@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/vystavky.css">
+    <title>Museum</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header_container">
+                <div class="header_img">
+                    <img src="../static/images/headerimg.svg"  class="header_real_img" alt="headerImg">
+                </div>
+                <nav class="header_menu">
+                    <ul class="menu_list">
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="/" class="menu_link firstword scroll-link">головна</a>
+                        </li>
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="/vystavky" class="menu_link">виставки</a>
+                        </li>
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="/vacancies" class="menu_link">вакансії</a>
+                        </li>
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="/plan" class="menu_link menu_link-for_muve">запланувати візит</a>
+                        </li>
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="#contacts" class="menu_link contact_link">зворотній зв'язок</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="lenguage_block">EN</button>
+                <button class="burger" type="button">
+                    <span>
+
+                    </span>
+                </button>
+            </div>
+        </header>
+            <main class="main">
+                <div class="main_container">
+                    <section class="vystavkyText">
+                        <p class="mainTextVystavky">Виставки</p>
+                        <div class="circleVyst"></div>
+                        <p class="textVyst textVyst1"> Наші виставки постійно оновлюються та представляють 
+                            картини як зі своїх власних колекцій, так і з колекцій інших галерей та 
+                            музеїв. </p> 
+                        <div class="circle circle1"></div>
+                        <div class="circle circle2"></div>
+                        <p class="textVyst textVyst2" id="scrollTo"> Ми запрошуємо вас на наступні доступні виставки: </p> 
+                    </section>
+                    <div class="input_container" id="inputs">
+                        <form action="/vystavky" method="GET" class="search_form">
+                            <input type="date" id="dateInput" name="date" class="date_input">
+                            <button type="submit" id="searchButton" class="search_button"><img src="../static/images/Search.svg" alt=""></button>
+                        </form>
+                        <form action="/vystavky" method="GET" class="search_form">
+                            <input type="search" id="searchInput" name="search" placeholder="Пошук..." class="search_input">
+                            <button type="submit" id="searchButton" class="search_button"><img src="../static/images/Search.svg" alt=""></button>
+                        </form>
+                    </div>
+                    <section class="vystavkyInfo" id="vystInfo">
+                        {% set results = [] %}
+                        {% for row in rows %}
+                            {% if search_query and search_query.lower() in row['vyst_name'].lower() %}
+                                {% set _ = results.append(row) %}
+                            {% elif not search_query %}
+                                {% set _ = results.append(row) %}
+                            {% endif %}
+                        {% endfor %}
+                        {% if results %}
+                            {% for row in results %}
+                                <!-- Відображення всіх виставок з умовою пошуку -->
+                                <div class="vystavky_container" id="{{ row['vyst_id'] }}">
+                                    <div class="vystavkyPH">
+                                        <img src="{{ row['photo_vys'] }}" alt="">
+                                    </div>
+                                    <div class="blockInfo">
+                                        <div class="redcircleVyst redcircleVyst1"></div>
+                                        <p class="vystText vystName" id="vyst_name">{{ row['vyst_name'] }}</p>
+                                        <p class="vystText dateInfo" id="vyst_date">{{ row['date_chars'] }}</p>
+                                        <p class="vystText timeInfo" id="vyst_time">{{ row['time_vys'] }}</p>
+                                        <div class="buttExplore" id="{{ row['vyst_id'] }}">
+                                            <a href="/about/{{ row['vyst_id'] }}" class="vystText exploreText">дізнатись більше</a>
+                                            <img src="../static/images/arrowMore.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            {% if not results and not search_query %}
+                                <p class="no_results_message">Такі виставки відсутні або ви ввели неправильне значення</p>
+                                <div class="buttBack">
+                                    <a href="/vystavky" class="backText">повернутись до виставок</a>
+                                </div>
+                            {% elif not results and search_query %}
+                                <p class="no_results_message">Такі виставки відсутні або ви ввели неправильне значення</p>
+                                <div class="buttBack">
+                                    <a href="/vystavky" class="backText">повернутись до виставок</a>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    </section>
+                </div>
+                <section id="contacts">
+                    {% include 'contacts_block.html' %}
+                </section>
+            </main>
+        <!-- footer -->
+        {% include 'footer.html' %} 
+    </div>
+    <script src="../static/script/vystavky.js"></script>
+    <script src="../static/script/main.js"></script>
+</body>
+</html>

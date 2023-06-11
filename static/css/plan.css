@@ -1,0 +1,893 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.3s;
+    font-family: ruber_m;
+}
+
+
+/* ////////////////////////////////////////////////// */
+
+body, html{
+    height: 100%;
+}
+
+
+.wrapper{
+    max-width: 1280px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* ///////////////////////HEADERSTART/////////////////////////// */
+
+.header{
+    max-width: 100%;
+}
+
+li{
+    list-style-type: none;
+}
+
+.header_container{
+    max-width: 1170px;
+    padding: 43px 5px 0 5px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.header_img{
+    margin-left: 45px;
+    margin-top: -43px;
+}
+
+.header_menu{
+    margin-left: 57px;
+    flex: 1 1 auto;
+    position: relative;
+}
+
+.menu_list{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu_item{
+    margin-top: 10px;
+}
+
+.menu_link{
+    text-decoration: none;
+    color: #292929;
+    font-weight: 600;
+    font-family: ruber_m;
+    text-transform: uppercase;
+    font-size: 20px;
+    
+}
+
+.menu_link:hover{
+    color: #fd0502;
+}
+
+.vector44{
+    display: none;
+}
+
+.menu_link-for_muve{
+    margin-left: 254px;
+}
+
+
+
+.firstword{
+    font-family: ruber_b;
+    font-weight: 700;
+}
+
+
+
+.contact_link{
+    color: #292929;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: ruber_m;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: absolute;
+    top: 0px;
+    right: 50px;
+}
+
+.contact_link:hover{
+    color: #fd0502;
+}
+
+.lenguage_block{
+    width: 59px;
+    height: 34px;
+    border: 1.5px #292929 solid;
+    border-radius: 32px;
+    background-color: inherit;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: ruber_b;
+    margin-top: -5px;
+    cursor: pointer;
+}
+
+.burger{
+    display: none;
+}
+
+
+
+
+
+@media (max-width: 600px){
+    .header_real_img{
+        width: 61px;
+        height: 89px;
+        margin-top: 14px;
+    }
+
+    .menu_link{
+        font-size: 18px;
+        font-weight: 400;
+        color: #f8f7f3;
+    }
+    .menu_link-for_muve{
+        margin-left: 0;
+    }
+    
+    .menu_list{
+        margin-left: 40px;
+        margin-top: 35px;
+    }
+
+    .menu_item{
+        display: flex;
+    }
+
+    .header_menu{
+        display: none;
+        margin-left: 0;
+    }
+
+    .contact_link{
+        position:static;
+    }
+
+    .vector44{
+        display: block;
+        margin-right: 20px;
+    }
+
+
+    .header_container{
+        max-width: 380px;
+        display: flex;
+        padding: 28px 5px 0 7px;
+        margin: 0 auto;
+    }
+    
+
+    .header_menu.active_burger{
+        display: block;
+        width: 390px;
+        height: 350px;
+        background-color: #292929;
+        position: absolute;
+        top: 0px;
+        left: 50% calc(-390px);
+        border-radius: 0 0 50px 50px;
+        
+
+    }
+
+    .burger{
+        display: block;
+        height: 15px;
+        flex: 0 0 23px;
+        position: relative;
+        z-index: 5;
+        border-radius: 1px;
+        background-color: inherit;
+        border: none;
+        margin-left: 14px;
+        margin-top: -2px;
+        transition: 0.3s;
+        
+    }
+
+    .burger span,
+    .burger::before,
+    .burger::after{
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: #292929;
+        position: absolute;
+        left: 0;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        z-index: 999;
+        
+    }
+    .burger span{
+        height: 2px;
+    }
+    .burger::after{
+        top: 0;
+    }
+    .burger::before{
+        bottom: 0;
+    }
+    .burger span{
+        top: calc(50% - 1px);
+    }
+
+    .lenguage_block{
+        width: 37px;
+        height: 21px;
+        font-size: 12px;
+        margin-left: 180px;
+    }
+
+    .lenguage_block.active_burger{
+        border-color: #f8f7f3;
+        color: #f8f7f3;
+        z-index: 5;
+    }
+
+    .burger.active_burger::after{
+        transform: rotate(45deg);
+        top: 6.5px;
+        background-color: #f8f7f3;
+    }
+    .burger.active_burger::before{
+        transform: rotate(-45deg);
+        bottom: 6px;
+        background-color: #f8f7f3;
+    }
+    .burger.burger.active_burger span{
+        transform: scale(0);
+        background-color: #f8f7f3;
+    }
+}
+
+
+
+@media (max-width: 413px) {
+    .header_menu.active_burger{
+        display: block;
+        width: 390px;
+        height: 350px;
+        background-color: #292929;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 0 0 50px 50px;
+       
+}
+
+}
+
+
+/* ////////////////////HEADEREND//////////////////////// */
+
+
+.page{
+    flex: 1 1 auto;
+}
+
+.visit_pryce__container{
+    max-width: 1170px;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    position: relative;
+    padding-bottom: 138px;
+} 
+
+.visit_pryce_h1text{
+    font-size: 120px;
+    font-family: oksana;
+    color: #292929;
+    text-align: center;
+    width: 100%;
+    font-weight: 400;
+}
+
+
+.visit_pryce_text1, .visit_pryce_text2{
+    font-weight: 400;
+    font-size: 38px;
+    color: #232323;
+    font-family: ruber_m;
+    width: 572px;
+    text-transform: uppercase;
+}
+
+.visit_pryce_smallinfoblock{
+    margin-left: 726px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 572px;
+    height: 110px;
+    margin-top: 85px;
+}
+
+
+.forVisit_pryce_h1textboll{
+    width: 35px;
+    height: 35px;
+    background-color: #fd0502;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: 225px;
+}
+
+.visit_pryce_first_decor{
+    width: 1000px;
+    height: 120px;
+    border: 3px solid #fd0502;
+    border-radius: 0 50px 50px 0;
+    position: absolute;
+    border-left: none;
+    top: 203px;
+    left: -440px;
+}
+
+.visit_pryce_fsecond_decor{
+    width: 500px;
+    height: 120px;
+    border: 3px solid #fd0502;
+    border-radius: 50px 0 0 50px;
+    border-right: none;
+    position: absolute;
+    top: 330px;
+    right: -220px;
+}
+
+.visit_pryce_h2text{
+    font-family: oksana;
+    font-size: 80px;
+    color: #292929;
+    text-align: center;
+    margin-top: 180px;
+}
+
+.visit_pryce_redarrow_rotate{
+    transform: rotate(180deg);
+    position: absolute;
+    top: 535px;
+    left: 450px;
+
+}
+.visit_pryce_redarrow{
+    position: absolute;
+    top: 535px;
+    right: 450px;
+
+}
+
+.visit_pryce_h2text:hover ~ .visit_pryce_redarrow{
+    right: 445px;
+}
+
+.visit_pryce_h2text:hover ~ .visit_pryce_redarrow_rotate{
+    left: 445px;
+}
+
+.block_for_pryces{
+    display: flex;
+    justify-content: center;
+    gap: 53px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.cyrcle_pryce{
+    width: 275px;
+    height: 275px;
+    border: 3px solid #fd0502;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.blocks_pryce_h1text{
+    font-family: ruber_m;
+    font-size: 28px;
+    font-weight: 400;
+    color: #fd0502;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 95px;
+}
+
+.blocks_pryce_ptext{
+    font-family: ruber_b;
+    font-size: 28px;
+    font-weight: 400;
+    color: #fd0502;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+.taketicket_h1text{
+    font-size: 80px;
+    font-family: oksana;
+    color: #292929;
+    text-align: center;
+    width: 100%;
+    font-weight: 400;
+}
+.taketicket__container{
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.mainform_block{
+    margin-top: 78px;
+}
+
+.mainform_block_info{
+    font-size: 24px;
+    font-family: ruber_m;
+    font-weight: 400;
+    color: #232323;
+    width: 569px;
+}
+
+.forms_main_block{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left_forms{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.input_all_name,
+.input_phonenumber,
+.input_date,
+.input_pryce{
+    width: 567px;
+    height: 81px;
+    border-radius: 8px;
+    padding: 23px;
+    border: solid 2px #232323;
+    color: #232323;
+    opacity: 0.7;
+    font-family: ruber_m;
+    font-size: 24px;
+}
+.input_pryce {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.error{
+    color: #fd0502;
+    font-family: ruber_b;
+}
+#notValidName, #notValidNum, #notValidDate{
+    margin-top: -40px;
+}
+
+.right_forms{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.right_forms_bobyblock{
+    width: 496px;
+    height: 245px;
+    border: 2px solid #232323;
+    border-radius: 8px;
+}
+
+
+.forms_button{
+    border: 2px solid #fd0502;
+    border-radius: 8px;
+    color: #fd0502;
+    font-size: 28px;
+    font-family: ruber_m;
+    width: 250px;
+    height: 70px;
+    background-color: inherit;
+    transition: 0.3s;
+    margin-top: 159px;
+}
+
+.forms_button:hover{
+    background-color: #fd0502;
+    color: white;
+}
+
+
+.baby_block_h1text{
+    font-family: ruber_b;
+    font-size: 28px;
+    color: #232323;
+    margin-top: 25px;
+    margin-left: 26px;
+}
+
+.input_cartinfo{
+    width: 383px;
+    border: none;
+    border-bottom: 2px solid #232323;
+    margin-left: 26px;
+    margin-top: 38px;
+    font-size: 18px;
+    color: #232323;
+    font-family: ruber_m;
+}
+
+.input_cartinfo::placeholder{
+    opacity: 0.7;
+}
+
+
+.input_cart_cvv{
+    width: 154px;
+    border: none;
+    border-bottom: 2px solid #232323;
+    margin-left: 26px;
+    margin-top: 55px;
+    font-size: 18px;
+    color: #232323; 
+    font-family: ruber_m;
+}
+
+.input_cart_cvv::placeholder{
+    opacity: 0.7;
+}
+
+input:focus{
+    outline: none;
+}
+
+.input_cart_time{
+    width: 154px;
+    border: none;
+    border-bottom: 2px solid #232323;
+    margin-left: 142px;
+    margin-top: 55px;
+    font-size: 18px;
+    color: #232323;  
+    font-family: ruber_m;
+}
+
+.input_cart_time::placeholder{
+    opacity: 0.7;
+}
+
+#notFilledData{
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    overflow: auto;
+  }
+  
+  .modal-content {
+    background-image: url(../images/ticketModal.svg);
+    margin: 15% auto;
+    padding: 20px;
+    width: 730px;
+    height: 420px;
+    position: relative;
+    top: 10%;
+    transform: translateY(-50%);
+  }
+  .ticketMainInfo{
+    margin-left: 20px;
+    margin-top: 30px;
+    width: 480px;
+    height: 62px;
+    font-family: oksana;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: 0.02em;
+    color: #232323;
+  }
+  .close {
+    color: #232323;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #e71c1c;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #formValues {
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 24px;
+  }
+  .infoForticket{
+    margin-top: 15px;
+  }
+  .ticket_button{
+    margin-top: 50px;
+    margin-left: 20px;
+    border: none;
+    font-size: 18px;
+    font-family: ruber_m;
+    width: 130px;
+    height: 40px;
+    background-color: inherit;
+    transition: 0.3s;
+    color: #343434;
+  }
+  .ticket_button:hover {
+    color: #e71c1c;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+#taketicket{
+    padding-bottom: 100px;
+}
+
+@media (max-width: 600px) {
+    .visit_pryce_h1text{
+        font-size: 30px;
+        margin-top: 10px;
+    }
+    .forVisit_pryce_h1textboll{
+        width: 8px;
+        height: 8px;
+        top: 15px;
+        right: 104px;
+    }
+    .visit_pryce_text1{
+        font-size: 12px;
+        
+    }
+    .visit_pryce_text2{
+        font-size: 12px;
+        margin-top: 6px;
+       
+    }
+    .visit_pryce_smallinfoblock{
+        margin-top: 30px;
+        margin-left: 606px;
+        height: 155px;
+        display: flex;
+        justify-content: start;
+        height: 50px;
+    }
+    .visit_pryce_first_decor{
+        height: 31px;
+        width: 250px;
+        top: 74px;
+        left: -65px;
+    }
+    .visit_pryce_fsecond_decor{
+        height: 31px;
+        width: 120px;
+        top: 125px;
+        right: -50px;
+    }
+    .visit_pryce_h2text{
+        font-size: 25px;
+        margin-top: 50px;
+    }
+    .visit_pryce_redarrow, .visit_pryce_redarrow_rotate{
+        display: none;
+    }
+    .block_for_pryces{
+        gap: 19px;
+        height: 100px;
+        margin-top: 30px;
+    }
+    .cyrcle_pryce{
+        width: 100px;
+        height: 100px;
+    }
+    .blocks_pryce_h1text,
+    .blocks_pryce_ptext{
+        font-size: 10px;
+    }
+    .blocks_pryce_h1text{
+        margin-top: 38px;
+    }
+    .taketicket_h1text{
+        font-size: 30px;
+    }
+    .visit_pryce__container{
+        padding-bottom: 64px;
+
+    }
+    .mainform_block_info{
+        font-size: 18px;
+        width: 360px;
+        margin-left: 15px;
+    }
+    .mainform_block{
+        margin-top: 38px;
+        margin-left: 0px;
+        
+    }
+    .input_all_name,
+    .input_phonenumber,
+    .input_date,
+    .input_pryce{
+        width: 358px;
+        height: 51px;
+        font-size: 15px;
+    }
+    .forms_main_block{
+        margin-top: 31px;
+    }
+    .left_forms{
+        gap: 31px;
+        display: flex;
+        justify-content: center;
+        margin-left: 15px;
+    }
+    .right_forms_bobyblock{
+        width: 328px;
+        height: 162px;
+        margin-left: 0px;
+        margin-top: 37px;
+        
+    }
+    .forms_main_block{
+        display: flex;
+        flex-direction: column;
+    }
+    .input_cartinfo{
+        width: 253px;
+        font-size: 12px;
+        margin-top: 25px;
+        margin-left: 20px;
+    }
+    .baby_block_h1text{
+        font-size: 12px;
+        margin-top: 18px;
+        margin-left: 18px;
+    }
+    .input_cart_cvv{
+        width: 101px;
+        font-size: 12px;
+        margin-top: 0px;
+        margin-left: 20px;
+    }
+    .input_cart_time{
+        width: 101px;
+        font-size: 12px;
+        margin-left: 93px;
+        margin-top: 26px;
+    }
+    input::placeholder{
+        font-size: 12px;
+    }
+    .right_forms{
+        justify-content: center;
+        margin-left: -10px;
+        
+    }
+    .forms_button{
+        width: 123px;
+        height: 35px;
+        font-size: 14px;
+        margin-left: 0;
+        margin-top: 0;
+        margin-top: 29px;
+    }
+
+    #notFilledData{
+        font-size: 20px;
+        margin-top: 20px;
+        text-align: center;
+    }
+    .modal-content {
+        background-image: url(../images/ticketModalmob.svg);
+        margin: 10% auto;
+        padding: 10px;
+        width: 350px;
+        height: 196px;
+        position: relative;
+        top: 30%;
+        transform: translateY(-30%);
+    }
+    .ticketMainInfo{
+        margin-left: 10px;
+        margin-top: 20px;
+        width: 250px;
+        height: 36px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .close {
+        font-size: 18px;
+    }
+      
+    #formValues {
+        margin-left: 10px;
+        margin-top: 10px;
+        font-size: 12px;
+    }
+    .ticket_button{
+        margin-top: 7px;
+        margin-left: -20px;
+        font-size: 10px;
+      }
+    .infoForticket{
+        margin-top: 8px;
+    }
+    .wrapper{
+        overflow: hidden;
+    }
+    .main{
+        max-width: 390px;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+    #taketicket{
+    padding-bottom: 30px;
+    }
+}
+
+
+
+
+
+
+@font-face {
+    font-family: ruber_b;
+    src: url(../fonts/Ruberoid-Bold.ttf);
+}
+
+
+@font-face {
+    font-family: ruber_m;
+    src: url(../fonts/Ruberoid-Medium.ttf);
+}
+
+
+@font-face {
+    font-family: oksana;
+    src: url(../fonts/Oks\ Free\ 0013.otf);
+}

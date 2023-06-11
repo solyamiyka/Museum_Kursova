@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contacts_block{
+    width: 100%;
+    padding-bottom: 163px;
+}
+
+.contacts_block_container{
+    max-width: 1170px;
+    padding: 0 5px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.contact_block_h1text{
+    max-width: 100%;
+    font-family: oksana;
+    font-size: 120px;
+    font-weight: 400;
+    color: #292929;
+    text-align: center;
+}
+
+.contact_block_mainblock{
+    display: flex;
+    margin-top: 62px;
+}
+
+.redcircle{
+    width: 35px;
+    height: 35px;
+    background-color: #fd0502;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 5;
+    top: 35px;
+    left: 400px;
+}
+
+.contact_block_leftside{
+    max-width: 60%;
+}
+
+.contact_block_rightside{
+    max-width: 40%;
+}
+
+.block_for_mapimg{
+    margin-top: 70px;
+}
+
+li{
+    list-style-type: none;
+}
+
+.leftside_h1text{
+    font-family: oksana;
+    font-size: 80px;
+    font-weight: 400;
+    color: #292929;
+    margin-bottom: 10px;
+}
+
+.adress_item{
+    margin-top: 40px;
+}
+
+
+.adress_link{
+    font-family: ruber_m;
+    font-size: 30px;
+    color: #292929;
+    text-transform: uppercase;
+}
+
+.img_inst, .img_facebook{
+    display: none;
+}
+
+
+@media (max-width: 600px) {
+
+    .contacts_block{
+        padding: 0;
+        padding-bottom: 76px;
+    }
+    .contacts_block_container{
+        min-width: 380px;
+        padding: 0 5px;
+    }
+
+    .contact_block_h1text{
+        font-size: 30px;
+        margin-bottom: 0px;
+    }
+
+    .redcircle{
+        width: 8px;
+        height: 8px;
+        top: 8px;
+        left: 150px;
+    }
+
+    .leftside_h1text{
+        font-size: 25px;
+    }
+    .contact_block_mainblock{
+        margin-top: 44px;
+    }
+
+    .adress_link{
+        font-size: 10px;
+    }
+    .adress_item{
+        margin-top: 10px;
+    }
+
+    .imgMap{
+        width: 140px;
+        height: 141px;
+    }
+
+    .block_for_mapimg{
+        margin-top: 7px;
+    }
+    .img_inst{
+        display: block;
+        position: absolute;
+        top: 218px;
+        left: 0;
+
+    }
+    .img_facebook{
+        display: block;
+        position: absolute;
+        top: 218px;
+        left: 31px;
+
+    }
+}
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: oksana;
+    src: url(../fonts/Oks\ Free\ 0013.otf);
+}
+
+@font-face {
+    font-family: ruber_m;
+    src: url(../fonts/Ruberoid-Medium.ttf);
+}

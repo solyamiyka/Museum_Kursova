@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/plan.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <title>Museum</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header_container">
+                <div class="header_img">
+                    <img src="../static/images/headerimg.svg"  class="header_real_img" alt="headerImg">
+                </div>
+                <nav class="header_menu">
+                    <ul class="menu_list">
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="/" class="menu_link firstword">головна</a>
+                        </li>
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="/vystavky" class="menu_link">виставки</a>
+                        </li>
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="#taketicket" class="menu_link">замовити квиток</a>
+                        </li>
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="#contacts" class="menu_link contact_link">зворотній зв'язок</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="lenguage_block">EN</button>
+                <button class="burger" type="button">
+                    <span>
+
+                    </span>
+                </button>
+            </div>
+        </header>
+            <main class="main">
+                <section class="visit_pryce">
+                    <div class="visit_pryce__container">
+                        <h2 class="visit_pryce_h1text">
+                            Запланувати візит
+                        </h2>
+                        <div class="forVisit_pryce_h1textboll"></div>
+                        <div class="visit_pryce_first_decor"></div>
+                        <div class="visit_pryce_smallinfoblock">
+                            <div class="visit_pryce_text1">графік роботи</div>
+                            <div class="visit_pryce_text2">пн-нд: 9:00 - 19:00</div>
+                        </div>
+                        <div class="visit_pryce_fsecond_decor"></div>
+
+                        <div class="visit_pryce_h2text">ціни</div>
+                        <img src="../static/images/redarrow_forpryce.svg" alt="imgs" class="visit_pryce_redarrow">
+                        <img src="../static/images/redarrow_forpryce.svg" alt="imgs" class="visit_pryce_redarrow_rotate">
+                        <div class="block_for_pryces">
+                            <div class="cyrcle_pryce">
+                                <div class="blocks_pryce_h1text">дорослий</div>
+                                <div class="blocks_pryce_ptext">100 грн</div>
+                            </div>
+                            <div class="cyrcle_pryce">
+                                <div class="blocks_pryce_h1text">студент</div>
+                                <div class="blocks_pryce_ptext">50 грн</div>
+                            </div>
+                            <div class="cyrcle_pryce">
+                                <div class="blocks_pryce_h1text">школяр</div>
+                                <div class="blocks_pryce_ptext">50 грн</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="taketicket">
+                    <div class="taketicket__container">
+                        <h2 class="taketicket_h1text">
+                            замовити квиток
+                        </h2>
+
+                        <div class="mainform_block">
+                            <p class="mainform_block_info">
+                                Введіть свої дані в форму, щоб придбати онлайн-квиток
+                            </p>
+                        <div class="forms_main_block" id="mainForm">
+                            <form class="left_forms" method="get">
+                                <input type="text" class="input_all_name" id="nameSurnameInput" placeholder="Ім'я та прізвище">
+                                <input type="tel" class="input_phonenumber" id="numberInput" placeholder="Номер телефону">
+                                <input type="date" class="input_date" name="date" id="dateInput" placeholder="Дата відвідування">
+                                <select class="input_pryce">
+                                    <option value="test">Виберіть тариф</option>
+                                    <option value="tar1">ДОРОСЛИЙ</option>
+                                    <option value="tar2">СТУДЕНТ</option>
+                                    <option value="tar3">ШКОЛЯР</option>
+                                </select>
+                            </form>
+                            <div class="right_forms">
+                                <div class="right_forms_bobyblock" id="cardData">
+                                    <h2 class="baby_block_h1text">
+                                        Дані картки
+                                    </h2>
+                                    <input type="text" class="input_cartinfo" id="input_cartinfo" placeholder="Номер картки">
+                                    <input type="text" class="input_cart_cvv" id="input_cart_cvv" placeholder="CVV">
+                                    <input type="date" class="input_cart_time" id="input_cart_time" placeholder="Термін дії">
+                                </div>
+                                <button class="forms_button" id="popupButton">придбати</button>
+                            </div>
+                        </div>
+                        <div id="modal" class="modal">
+                            <div class="modal-content">
+                              <span class="close">&times;</span>
+                              <h3 class="ticketMainInfo">Квиток на відвідування музею</h3>
+                              <div id="formValues"></div>
+                              <button class="ticket_button" id="ticket_button">завантажити</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="contacts">
+                    {% include 'contacts_block.html' %}
+                </section>
+            </main>
+            <!-- footer -->
+            {% include 'footer.html' %} 
+        </header>
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
+
+    <!-- <script src="../static/script/jspdf.js"></script> -->
+
+    <script src="../static/script/plan.js"></script>
+    <script src="../static/script/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/aboutV.css">
+    <title>Museum</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header_container">
+                <div class="header_img">
+                    <img src="../static/images/headerimg.svg"  class="header_real_img" alt="headerImg">
+                </div>
+                <nav class="header_menu">
+                    <ul class="menu_list">
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="/" class="menu_link firstword">головна</a>
+                        </li>
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="/vystavky" class="menu_link">виставки</a>
+                        </li>
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="/vacancies" class="menu_link">вакансії</a>
+                        </li>
+                        <li class="menu_item">
+                            <img src="../static/images/Vector 44.svg" alt="string" class="vector44">
+                            <a href="/plan" class="menu_link">запланувати візит</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="lenguage_block">EN</button>
+                <button class="burger" type="button">
+                    <span>
+
+                    </span>
+                </button>
+            </div>
+        </header>
+            <main class="main">
+                <div class="main_container">
+                    <div class="about_container" id="{{ rows[0]['vyst_id'] }}">
+                        {% for row in rows %}
+                        <div class="blockMainInfo">
+                            <div class="redcircleVyst"></div>
+                            <p class="vystText vystName" id="vyst_name">{{ row['vyst_name'] }}</p>
+                            <div class="blockMain2">
+                                <p class="vystText dateInfo" id="vyst_date">{{ row['date_chars'] }}</p>
+                                <p class="vystText timeInfo" id="vyst_time">{{ row['time_vys'] }}</p>
+                            </div>
+                        </div>
+                        <div class="blockPhCircles">
+                            <div class="vystavkyPH">
+                                <img src="{{ row['photo_vys'] }}" alt="">
+                            </div>
+                            <div class="circleRed circleRed1"></div>
+                            <div class="circleRed circleRed2"></div>
+                            <div class="circleRed circleRed3"></div>
+                        </div>
+                        <div class="buttBack">
+                            <a href="/vystavky" class="vystText backText">повернутись до виставок</a>
+                            <img class="arrow" src="../static/images/arrowMore.svg" alt="">
+                        </div>
+                        <div class="block_allInfo">
+                            <div class="blockTextInfo">
+                                <p class="textInfo text_info1">{{ row['description_1'] }}</p>
+                                <p class="textInfo text_info2">{{ row['description_2'] }}</p>
+                            </div>
+                            <div class="circleplan circleplan1"></div>
+                            <div class="circleplan circleplan2"></div>
+                            <div class="circleplan circleplan3"></div>
+                            <div class="circleplan circleplan4"></div>
+                            <a href="/plan">
+                                <button class="buttonPlan">
+                                    <span class="buttonPlan-text">Запланувати візит</span>
+                                </button>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </main>
+        <!-- footer -->
+        {% include 'footer.html' %}  
+    </div>
+
+
+    <script src="../static/script/main.js"></script>
+</body>
+</html>
